@@ -27,6 +27,7 @@ package java.util.function;
 import java.util.Objects;
 
 /**
+ * 两个输入 一个输出
  * Represents a function that accepts two arguments and produces a result.
  * This is the two-arity specialization of {@link Function}.
  *
