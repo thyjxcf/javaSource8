@@ -30,6 +30,8 @@ import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
 
 /**
+ * traversing 遍历 covered by individually 单个地 bulk 块
+ *
  * An object for traversing and partitioning elements of a source.  The source
  * of elements covered by a Spliterator could be, for example, an array, a
  * {@link Collection}, an IO channel, or a generator function.

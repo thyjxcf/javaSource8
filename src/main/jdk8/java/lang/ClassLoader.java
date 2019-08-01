@@ -1377,14 +1377,17 @@ public abstract class ClassLoader {
     }
 
     /**
+     * delegation 委托
      * Returns the system class loader for delegation.  This is the default
      * delegation parent for new <tt>ClassLoader</tt> instances, and is
      * typically the class loader used to start the application.
      *
+     * sequence ？
      * <p> This method is first invoked early in the runtime's startup
      * sequence, at which point it creates the system class loader and sets it
      * as the context class loader of the invoking <tt>Thread</tt>.
      *
+     * implementation-dependent ？
      * <p> The default system class loader is an implementation-dependent
      * instance of this class.
      *
