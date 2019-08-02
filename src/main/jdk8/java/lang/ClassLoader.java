@@ -61,6 +61,7 @@ import sun.reflect.misc.ReflectUtil;
 import sun.security.util.SecurityConstants;
 
 /**
+ * is responsible for ?
  * A class loader is an object that is responsible for loading classes. The
  * class <tt>ClassLoader</tt> is an abstract class.  Given the <a
  * href="#name">binary name</a> of a class, a class loader should attempt to
