@@ -61,7 +61,7 @@ import sun.reflect.misc.ReflectUtil;
 import sun.security.util.SecurityConstants;
 
 /**
- * is responsible for ?
+ * is responsible for ? 对某某负责 binary name? 二进制名字 constitutes 构成
  * A class loader is an object that is responsible for loading classes. The
  * class <tt>ClassLoader</tt> is an abstract class.  Given the <a
  * href="#name">binary name</a> of a class, a class loader should attempt to
@@ -80,6 +80,7 @@ import sun.security.util.SecurityConstants;
  * type; if the element type is a primitive type, then the array class has no
  * class loader.
  *
+ * the manner ? 方式
  * <p> Applications implement subclasses of <tt>ClassLoader</tt> in order to
  * extend the manner in which the Java virtual machine dynamically loads
  * classes.
@@ -87,6 +88,7 @@ import sun.security.util.SecurityConstants;
  * <p> Class loaders may typically be used by security managers to indicate
  * security domains.
  *
+ * serve as  ？ 作为  built-in 内嵌
  * <p> The <tt>ClassLoader</tt> class uses a delegation model to search for
  * classes and resources.  Each instance of <tt>ClassLoader</tt> has an
  * associated parent class loader.  When requested to find a class or
@@ -95,6 +97,9 @@ import sun.security.util.SecurityConstants;
  * class or resource itself.  The virtual machine's built-in class loader,
  * called the "bootstrap class loader", does not itself have a parent but may
  * serve as the parent of a <tt>ClassLoader</tt> instance.
+ *
+ * parallel capable  注册 当前该加载器可以并发加载
+ * strictly hierarchical 严格
  *
  * <p> Class loaders that support concurrent loading of classes are known as
  * <em>parallel capable</em> class loaders and are required to register
@@ -110,17 +115,21 @@ import sun.security.util.SecurityConstants;
  * duration of the class loading process (see {@link #loadClass
  * <tt>loadClass</tt>} methods).
  *
+ * a platform-dependent manner. 平台相关形式
  * <p> Normally, the Java virtual machine loads classes from the local file
  * system in a platform-dependent manner.  For example, on UNIX systems, the
  * virtual machine loads classes from the directory defined by the
  * <tt>CLASSPATH</tt> environment variable.
  *
+ * originate from 来自于 constructed 构建
  * <p> However, some classes may not originate from a file; they may originate
  * from other sources, such as the network, or they could be constructed by an
  * application.  The method {@link #defineClass(String, byte[], int, int)
  * <tt>defineClass</tt>} converts an array of bytes into an instance of class
  * <tt>Class</tt>. Instances of this newly defined class can be created using
  * {@link Class#newInstance <tt>Class.newInstance</tt>}.
+ *
+ * originally
  *
  * <p> The methods and constructors of objects created by a class loader may
  * reference other classes.  To determine the class(es) referred to, the Java
@@ -168,8 +177,8 @@ import sun.security.util.SecurityConstants;
  * <p> Examples of valid class names include:
  * <blockquote><pre>
  *   "java.lang.String"
- *   "javax.swing.JSpinner$DefaultEditor"
- *   "java.security.KeyStore$Builder$FileBuilder$1"
+ *   "javax.swing.JSpinner$DefaultEditor" //内部类
+ *   "java.security.KeyStore$Builder$FileBuilder$1"//$1 表示FileBuilder中的第一个内部类
  *   "java.net.URLClassLoader$3$1"
  * </pre></blockquote>
  *
