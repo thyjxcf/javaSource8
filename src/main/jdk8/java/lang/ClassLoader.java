@@ -377,6 +377,7 @@ public abstract class ClassLoader {
      *   <li><p> Invoke {@link #findLoadedClass(String)} to check if the class
      *   has already been loaded.  </p></li>
      *
+     *  //如果父类加载器为null 则会调用 根类加载器
      *   <li><p> Invoke the {@link #loadClass(String) <tt>loadClass</tt>} method
      *   on the parent class loader.  If the parent is <tt>null</tt> the class
      *   loader built-in to the virtual machine is used, instead.  </p></li>
@@ -519,6 +520,7 @@ public abstract class ClassLoader {
     }
 
     /**
+     * follow the delegation model for loading classes, 遵循 委托模型 去加载类
      * Finds the class with the specified <a href="#name">binary name</a>.
      * This method should be overridden by class loader implementations that
      * follow the delegation model for loading classes, and will be invoked by
@@ -589,6 +591,7 @@ public abstract class ClassLoader {
     }
 
     /**
+     * ProtectionDomain 保护域
      * Converts an array of bytes into an instance of class <tt>Class</tt>.
      * Before the <tt>Class</tt> can be used it must be resolved.
      *
@@ -700,6 +703,8 @@ public abstract class ClassLoader {
     }
 
     /**
+     * ProtectionDomain ?
+     *
      * Converts an array of bytes into an instance of class <tt>Class</tt>,
      * with an optional <tt>ProtectionDomain</tt>.  If the domain is
      * <tt>null</tt>, then a default domain will be assigned to the class as
@@ -770,6 +775,7 @@ public abstract class ClassLoader {
     {
         protectionDomain = preDefineClass(name, protectionDomain);
         String source = defineClassSourceLocation(protectionDomain);
+        //本地方法 c 或c++实现
         Class<?> c = defineClass1(name, b, off, len, protectionDomain, source);
         postDefineClass(c, protectionDomain);
         return c;
