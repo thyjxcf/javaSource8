@@ -260,12 +260,14 @@ public final class Class<T> implements java.io.Serializable,
     @CallerSensitive
     public static Class<?> forName(String className)
                 throws ClassNotFoundException {
+        //调用这个方法的Class 对象
         Class<?> caller = Reflection.getCallerClass();
         return forName0(className, true, ClassLoader.getClassLoader(caller), caller);
     }
 
 
     /**
+     * the fully qualified name  ?完全限定名
      * Returns the {@code Class} object associated with the class or
      * interface with the given string name, using the given class loader.
      * Given the fully qualified name for a class or interface (in the same
@@ -277,6 +279,7 @@ public final class Class<T> implements java.io.Serializable,
      * {@code initialize} parameter is {@code true} and if it has
      * not been initialized earlier.
      *
+     * denotes ？
      * <p> If {@code name} denotes a primitive type or void, an attempt
      * will be made to locate a user-defined class in the unnamed package whose
      * name is {@code name}. Therefore, this method cannot be used to
