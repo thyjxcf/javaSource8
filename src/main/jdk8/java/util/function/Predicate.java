@@ -70,6 +70,7 @@ public interface Predicate<T> {
     }
 
     /**
+     * the logical negation 合乎逻辑的否定
      * Returns a predicate that represents the logical negation of this
      * predicate.
      *
@@ -86,6 +87,7 @@ public interface Predicate<T> {
      * predicate, if this predicate is {@code true}, then the {@code other}
      * predicate is not evaluated.
      *
+     * short-circuiting  简化
      * <p>Any exceptions thrown during evaluation of either predicate are relayed
      * to the caller; if evaluation of this predicate throws an exception, the
      * {@code other} predicate will not be evaluated.

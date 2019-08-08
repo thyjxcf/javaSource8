@@ -50,7 +50,9 @@ import java.util.function.ToLongFunction;
 import java.util.function.UnaryOperator;
 
 /**
- * sequence     parallel  aggregat 合计聚合  illustrates 举例
+ * sequence     parallel  aggregat 合计聚合  illustrates 举例 演示
+ *
+ * aggregate ?
  *
  * A sequence of elements supporting sequential and parallel aggregate
  * operations.  The following example illustrates an aggregate operation using
@@ -71,6 +73,9 @@ import java.util.function.UnaryOperator;
  * transform it into a stream of {@code int} values representing the weight of
  * each red widget. Then this stream is summed to produce a total weight.
  *  // 原生 特定版本 conform to  为了减少不必要的拆箱装箱 操作
+ *  In addition to 除了  are referred to 被称之为 。
+ * conform to 遵循
+ *
  * <p>In addition to {@code Stream}, which is a stream of object references,
  * there are primitive specializations for {@link IntStream}, {@link LongStream},
  * and {@link DoubleStream}, all of which are referred to as "streams" and
@@ -94,13 +99,14 @@ import java.util.function.UnaryOperator;
  * terminal operation is initiated, and source elements are consumed only
  * as needed.
  *
- * superficial  similarities 相似性 pipeline
+ * superficial  表面的 similarities 相似性 pipeline
  *
- * manipulate
- * declaratively
+ * manipulate 操纵
+ * declaratively 陈述地 声明地
  *
- * traversal
- *
+ * traversal 遍历
+ * desired 需要的
+ * functionality 功能
  *
  * <p>Collections and streams, while bearing some superficial similarities,
  * have different goals.  Collections are primarily concerned with the efficient
@@ -119,8 +125,8 @@ import java.util.function.UnaryOperator;
  * source while it is being queried.
  *
  * non-interfering
- * stateless 无状态
- *
+ * stateless 无状态 user-specified 用户指定
+ *  To preserve  保持
  * <p>Most stream operations accept parameters that describe user-specified
  * behavior, such as the lambda expression {@code w -> w.getWeight()} passed to
  * {@code mapToInt} in the example above.  To preserve correct behavior,
@@ -140,6 +146,7 @@ import java.util.function.UnaryOperator;
  * method references.  Unless otherwise specified these parameters must be
  * <em>non-null</em>.
  *   一个流 只能调用一次  为啥 ？ 怎么才能发现只能调用一次
+ *   multiple traversals 多次遍历
  * <p>A stream should be operated on (invoking an intermediate or terminal stream
  * operation) only once.  This rules out, for example, "forked" streams, where
  * the same source feeds two or more pipelines, or multiple traversals of the

@@ -41,8 +41,11 @@ import java.util.NoSuchElementException;
 
 
 /**
+ * facility ? 设施
  * A simple service-provider loading facility.
  *
+ * be made available  ? platform-specific means? 特定平台的手段   well-known 已知的
+ * in the form of 以什么形式
  * <p> A <i>service</i> is a well-known set of interfaces and (usually
  * abstract) classes.  A <i>service provider</i> is a specific implementation
  * of a service.  The classes in a provider typically implement the interfaces
@@ -66,6 +69,7 @@ import java.util.NoSuchElementException;
  * provider classes must have a zero-argument constructor so that they can be
  * instantiated during loading.
  *
+ *  服务提供者通过 放在 文件
  * <p><a name="format"> A service provider is identified by placing a
  * <i>provider-configuration file</i> in the resource directory
  * <tt>META-INF/services</tt>.</a>  The file's name is the fully-qualified <a

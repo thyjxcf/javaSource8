@@ -49,6 +49,7 @@ public interface Function<T, R> {
     R apply(T t);
 
     /**
+     * is relayed to 被传送到
      * Returns a composed function that first applies the {@code before}
      * function to its input, and then applies this function to the result.
      * If evaluation of either function throws an exception, it is relayed to
