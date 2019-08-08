@@ -510,6 +510,7 @@ public interface Collection<E> extends Iterable<E> {
     /**
      * Creates a {@link Spliterator} over the elements in this collection.
      *
+     * SIZED 固定大小
      * Implementations should document characteristic values reported by the
      * spliterator.  Such characteristic values are not required to be reported
      * if the spliterator reports {@link Spliterator#SIZED} and this collection
@@ -565,6 +566,7 @@ public interface Collection<E> extends Iterable<E> {
     /**
      * Returns a sequential {@code Stream} with this collection as its source.
      *
+     * IMMUTABLE 不可变的   CONCURRENT  late-binding
      * <p>This method should be overridden when the {@link #spliterator()}
      * method cannot return a spliterator that is {@code IMMUTABLE},
      * {@code CONCURRENT}, or <em>late-binding</em>. (See {@link #spliterator()}

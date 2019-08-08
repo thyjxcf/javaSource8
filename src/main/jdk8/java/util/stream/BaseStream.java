@@ -95,6 +95,8 @@ public interface BaseStream<T, S extends BaseStream<T, S>>
     boolean isParallel();
 
     /**
+     * 代表 所返回的一个新的流对象 。
+     *
      * Returns an equivalent stream that is sequential.  May return
      * itself, either because the stream was already sequential, or because
      * the underlying stream state was modified to be sequential.
@@ -119,6 +121,7 @@ public interface BaseStream<T, S extends BaseStream<T, S>>
     S parallel();
 
     /**
+     * unordered 无排序
      * Returns an equivalent stream that is
      * <a href="package-summary.html#Ordering">unordered</a>.  May return
      * itself, either because the stream was already unordered, or because
