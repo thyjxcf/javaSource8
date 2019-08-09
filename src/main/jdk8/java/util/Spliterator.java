@@ -36,10 +36,12 @@ import java.util.function.LongConsumer;
  * of elements covered by a Spliterator could be, for example, an array, a
  * {@link Collection}, an IO channel, or a generator function.
  *
+ * individually 一个一个地 bulk 成块 遍历
  * <p>A Spliterator may traverse elements individually ({@link
  * #tryAdvance tryAdvance()}) or sequentially in bulk
  * ({@link #forEachRemaining forEachRemaining()}).
  *
+ * imbalanced or inefficient 不平衡 ，无效 exhaust  消耗
  * <p>A Spliterator may also partition off some of its elements (using
  * {@link #trySplit}) as another Spliterator, to be used in
  * possibly-parallel operations.  Operations using a Spliterator that
@@ -59,10 +61,14 @@ import java.util.function.LongConsumer;
  * report {@code SORTED}.  Characteristics are reported as a simple unioned bit
  * set.
  *
+ * additionally 额外的
  * Some characteristics additionally constrain method behavior; for example if
  * {@code ORDERED}, traversal methods must conform to their documented ordering.
  * New characteristics may be defined in the future, so implementors should not
  * assign meanings to unlisted values.
+ *
+ * is expected to structural interference 结构上修改
+ * optimize 优化
  *
  * <p><a name="binding">A Spliterator that does not report {@code IMMUTABLE} or
  * {@code CONCURRENT} is expected to have a documented policy concerning:
@@ -82,6 +88,7 @@ import java.util.function.LongConsumer;
  * after all elements have been traversed, rather than checking per-element and
  * failing immediately.
  *
+ * an estimated value 估算的值
  * <p>Spliterators can provide an estimate of the number of remaining elements
  * via the {@link #estimateSize} method.  Ideally, as reflected in characteristic
  * {@link #SIZED}, this value corresponds exactly to the number of elements
@@ -106,6 +113,7 @@ import java.util.function.LongConsumer;
  * {@link #estimateSize()} for {@code SIZED} spliterators) are only valid before
  * traversal has begun.
  *
+ * their corresponding wrapper class  corresponding 基于 in preference to优先
  * <p>Primitive subtype specializations of {@code Spliterator} are provided for
  * {@link OfInt int}, {@link OfLong long}, and {@link OfDouble double} values.
  * The subtype default implementations of
@@ -126,6 +134,7 @@ import java.util.function.LongConsumer;
  * does not affect the order in which the values, transformed to boxed values,
  * are encountered.
  *
+ *  in addition to 除了 impose  smaller per-element overhead
  * @apiNote
  * <p>Spliterators, like {@code Iterators}s, are for traversing the elements of
  * a source.  The {@code Spliterator} API was designed to support efficient
@@ -135,6 +144,7 @@ import java.util.function.LongConsumer;
  * smaller per-element overhead than {@code Iterator}, and to avoid the inherent
  * race involved in having separate methods for {@code hasNext()} and
  * {@code next()}.
+ *  arbitrary ？ 任意的  non-deterministic 不确定的 ？  structurally interfered ？
  *
  * <p>For mutable sources, arbitrary and non-deterministic behavior may occur if
  * the source is structurally interfered with (elements added, replaced, or
@@ -142,6 +152,7 @@ import java.util.function.LongConsumer;
  * the end of traversal.  For example, such interference will produce arbitrary,
  * non-deterministic results when using the {@code java.util.stream} framework.
  *
+ *   Structural interference ？
  * <p>Structural interference of a source can be managed in the following ways
  * (in approximate order of decreasing desirability):
  * <ul>
