@@ -88,7 +88,7 @@ import java.util.function.LongConsumer;
  * after all elements have been traversed, rather than checking per-element and
  * failing immediately.
  *
- * an estimated value 估算的值 corresponds   encountered
+ * an estimated value 估算的值
  * <p>Spliterators can provide an estimate of the number of remaining elements
  * via the {@link #estimateSize} method.  Ideally, as reflected in characteristic
  * {@link #SIZED}, this value corresponds exactly to the number of elements
@@ -97,7 +97,6 @@ import java.util.function.LongConsumer;
  * being performed on the source, such as helping to determine whether it is
  * preferable to split further or traverse the remaining elements sequentially.
  *
- * Despite obvious utility
  * <p>Despite their obvious utility in parallel algorithms, spliterators are not
  * expected to be thread-safe; instead, implementations of parallel algorithms
  * using spliterators should ensure that the spliterator is only used by one
@@ -115,7 +114,6 @@ import java.util.function.LongConsumer;
  * traversal has begun.
  *
  * their corresponding wrapper class  corresponding 基于 in preference to优先
- *
  * <p>Primitive subtype specializations of {@code Spliterator} are provided for
  * {@link OfInt int}, {@link OfLong long}, and {@link OfDouble double} values.
  * The subtype default implementations of
@@ -137,7 +135,6 @@ import java.util.function.LongConsumer;
  * are encountered.
  *
  *  in addition to 除了 impose  smaller per-element overhead
- *
  * @apiNote
  * <p>Spliterators, like {@code Iterators}s, are for traversing the elements of
  * a source.  The {@code Spliterator} API was designed to support efficient
@@ -343,15 +340,16 @@ public interface Spliterator<T> {
     }
 
     /**
-     * covered 涵盖
+     * covering 覆盖  upon return from
      * If this spliterator can be partitioned, returns a Spliterator
      * covering elements, that will, upon return from this method, not
      * be covered by this Spliterator.
      *
+     * cover a strict prefix of zh
      * <p>If this Spliterator is {@link #ORDERED}, the returned Spliterator
      * must cover a strict prefix of the elements.
      *
-     * infinite 无限 eventually 最终
+     * an infinite number of 无数的
      * <p>Unless this Spliterator covers an infinite number of elements,
      * repeated calls to {@code trySplit()} must eventually return {@code null}.
      * Upon non-null return:

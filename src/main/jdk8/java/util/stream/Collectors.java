@@ -58,6 +58,7 @@ import java.util.function.ToIntFunction;
 import java.util.function.ToLongFunction;
 
 /**
+ * various 各种各样的  criteria 标准 ，条件
  * Implementations of {@link Collector} that implement various useful reduction
  * operations, such as accumulating elements into collections, summarizing
  * elements according to various criteria, etc.
@@ -365,7 +366,7 @@ public final class Collectors {
      * 为啥就是不可变的了 怎么看出来
      * <pre>{@code
      *     List<String> people
-     *         = people.stream().collect(collectingAndThen(toList(), Collections::unmodifiableList));
+     *         = people.stream().collect(collectingAndThen(List(), Collections::unmodifiableList));
      * }</pre>
      *
      * @param <T> the type of the input elements
