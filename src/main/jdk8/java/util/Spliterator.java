@@ -555,6 +555,7 @@ public interface Spliterator<T> {
     public static final int IMMUTABLE  = 0x00000400;
 
     /**
+     * signifying 表示
      * Characteristic value signifying that the element source may be safely
      * concurrently modified (allowing additions, replacements, and/or removals)
      * by multiple threads without external synchronization. If so, the
