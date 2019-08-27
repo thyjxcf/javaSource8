@@ -508,14 +508,15 @@ public interface Collection<E> extends Iterable<E> {
     int hashCode();
 
     /**
+     * over 针对
      * Creates a {@link Spliterator} over the elements in this collection.
      *
-     * SIZED 固定大小
+     * SIZED 固定大小 document ？文档化 特性值 不需要 报告 为啥
      * Implementations should document characteristic values reported by the
      * spliterator.  Such characteristic values are not required to be reported
      * if the spliterator reports {@link Spliterator#SIZED} and this collection
      * contains no elements.
-     *
+     * more efficient 更加高效的 preserve 保留
      * <p>The default implementation should be overridden by subclasses that
      * can return a more efficient spliterator.  In order to
      * preserve expected laziness behavior for the {@link #stream()} and
@@ -566,7 +567,7 @@ public interface Collection<E> extends Iterable<E> {
     /**
      * Returns a sequential {@code Stream} with this collection as its source.
      *
-     * IMMUTABLE 不可变的   CONCURRENT  late-binding
+     * IMMUTABLE 不可变的   CONCURRENT  late-binding  为什么 要重写
      * <p>This method should be overridden when the {@link #spliterator()}
      * method cannot return a spliterator that is {@code IMMUTABLE},
      * {@code CONCURRENT}, or <em>late-binding</em>. (See {@link #spliterator()}

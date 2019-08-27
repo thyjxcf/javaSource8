@@ -73,6 +73,7 @@ import sun.security.util.SecurityConstants;
  * Class#getClassLoader() reference} to the <tt>ClassLoader</tt> that defined
  * it.
  *
+ * 如果数组类型是基本类型 ，这个数组就没有类加载器。
  * <p> <tt>Class</tt> objects for array classes are not created by class
  * loaders, but are created automatically as required by the Java runtime.
  * The class loader for an array class, as returned by {@link
