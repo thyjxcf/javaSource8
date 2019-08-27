@@ -187,6 +187,7 @@ import java.util.function.LongConsumer;
  * </li>
  * </ul>
  *
+ * illustration
  * <p><b>Example.</b> Here is a class (not a very useful one, except
  * for illustration) that maintains an array in which the actual data
  * are held in even locations, and unrelated tag data are held in odd
@@ -340,13 +341,16 @@ public interface Spliterator<T> {
     }
 
     /**
+     * covering 覆盖  upon return from
      * If this spliterator can be partitioned, returns a Spliterator
      * covering elements, that will, upon return from this method, not
      * be covered by this Spliterator.
      *
+     * cover a strict prefix of zh
      * <p>If this Spliterator is {@link #ORDERED}, the returned Spliterator
      * must cover a strict prefix of the elements.
      *
+     * an infinite number of 无数的
      * <p>Unless this Spliterator covers an infinite number of elements,
      * repeated calls to {@code trySplit()} must eventually return {@code null}.
      * Upon non-null return:
@@ -360,6 +364,7 @@ public interface Spliterator<T> {
      * splitting.</li>
      * </ul>
      *
+     * commenced 开始
      * <p>This method may return {@code null} for any reason,
      * including emptiness, inability to split after traversal has
      * commenced, data structure constraints, and efficiency
@@ -387,6 +392,7 @@ public interface Spliterator<T> {
      * encountered by a {@link #forEachRemaining} traversal, or returns {@link
      * Long#MAX_VALUE} if infinite, unknown, or too expensive to compute.
      *
+     * arbitrarily 武断地
      * <p>If this Spliterator is {@link #SIZED} and has not yet been partially
      * traversed or split, or this Spliterator is {@link #SUBSIZED} and has
      * not yet been partially traversed, this estimate must be an accurate
@@ -394,6 +400,7 @@ public interface Spliterator<T> {
      * Otherwise, this estimate may be arbitrarily inaccurate, but must decrease
      * as specified across invocations of {@link #trySplit}.
      *
+     * inexact 不精确的
      * @apiNote
      * Even an inexact estimate is often useful and inexpensive to compute.
      * For example, a sub-spliterator of an approximately balanced binary tree

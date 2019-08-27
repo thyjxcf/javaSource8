@@ -35,6 +35,7 @@ import java.util.function.Supplier;
 
 /**
  * Reduction 汇聚 ？ mutable 可变的 accumulate 积累
+ * optionally 随意地
  * 将输入元素 累积到一个可变的结果容器中
  * 他可以串行或并行执行。
  * A <a href="package-summary.html#Reduction">mutable reduction operation</a> that
@@ -51,7 +52,7 @@ import java.util.function.Supplier;
  * such as "maximum valued transaction by seller", etc.  The class {@link Collectors}
  * provides implementations of many common mutable reductions.
  *
- * specified 定义  incorporating ？ accumulator 累加器 incorporating 合并
+ * specified 定义  incorporating ？ 合并 accumulator 累加器 incorporating 合并
  *
  * <p>A {@code Collector} is specified by four functions that work together to
  * accumulate entries into a mutable result container, and optionally perform
@@ -102,6 +103,7 @@ import java.util.function.Supplier;
  *     R r2 = finisher.apply(combiner.apply(a2, a3));  // result with splitting
  * } </pre>
  *
+ * is relaxed to ？
  * <p>For collectors that do not have the {@code UNORDERED} characteristic,
  * two accumulated results {@code a1} and {@code a2} are equivalent if
  * {@code finisher.apply(a1).equals(finisher.apply(a2))}.  For unordered
@@ -183,6 +185,7 @@ import java.util.function.Supplier;
  *         = Collectors.summingInt(Employee::getSalary))
  * }</pre>
  *
+ * tabulate 把 。。。制成表格 logic using 逻辑使用
  * If we wanted to create a collector to tabulate the sum of salaries by
  * department, we could reuse the "sum of salaries" logic using
  * {@link Collectors#groupingBy(Function, Collector)}:
@@ -228,6 +231,7 @@ public interface Collector<T, A, R> {
     BinaryOperator<A> combiner();
 
     /**
+     * be presumed to 被推定为
      * Perform the final transformation from the intermediate accumulation type
      * {@code A} to the final result type {@code R}.
      *
@@ -316,6 +320,7 @@ public interface Collector<T, A, R> {
     }
 
     /**
+     * optimize reduction implementations.  优化
      * Characteristics indicating properties of a {@code Collector}, which can
      * be used to optimize reduction implementations.
      */
@@ -340,7 +345,7 @@ public interface Collector<T, A, R> {
         UNORDERED,
 
         /**
-         * 同一性
+         * 同一性 elided 省略
          * Indicates that the finisher function is the identity function and
          * can be elided.  If set, it must be the case that an unchecked cast
          * from A to R will succeed.
